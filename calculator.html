@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<style>
+    * {
+        font-size: 50px;
+    }
+
+    body {
+        background-color: rgb(27, 25, 25);
+
+    }
+
+    .container {
+        background-color: rgba(255, 255, 255, 0.114);
+        width: 600px;
+        height: 700px;
+        margin: 0 auto;
+        padding: 10px;
+        border-radius: 1%;
+
+    }
+
+    .header {
+
+        text-align: right;
+        background-color: aliceblue;
+        margin: 0 auto;
+        border-radius: 2%;
+        width: 531px;
+        height: 90px;
+    }
+
+    #input {
+
+
+        text-align: right;
+        background-color: aliceblue;
+
+        border-width: 0px;
+        width: 450px;
+        height: 50px;
+        font-size: 30px !important;
+
+    }
+
+    .saf_one {
+
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        justify-content: space-between;
+        padding: 0px 35px;
+    }
+
+    #safaloula {
+        background-color: aliceblue;
+        height: 90px;
+        width: 90px;
+        border-radius: 10%;
+
+    }
+
+    #fasakh {
+        background-color: rgba(255, 0, 89, 0.748);
+        height: 90px;
+        width: 90px;
+        border-radius: 10%;
+        font-size: 50px;
+        color: black;
+    }
+
+    .saf_two {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        justify-content: space-between;
+        padding: 0px 35px;
+
+    }
+
+    #safatheniya {
+        background-color: aliceblue;
+        height: 90px;
+        width: 90px;
+        border-radius: 10%;
+
+    }
+
+    .saf_three {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        justify-content: space-between;
+        padding: 0px 35px;
+    }
+
+    #safatheltha {
+        background-color: aliceblue;
+        height: 90px;
+        width: 90px;
+        border-radius: 10%;
+    }
+
+    .saf_four {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        justify-content: space-between;
+        padding: 0px 35px;
+    }
+
+    #safarab3a {
+        background-color: aliceblue;
+        height: 90px;
+        width: 90px;
+        border-radius: 10%;
+    }
+
+    .saf_five {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        justify-content: space-between;
+        padding: 0px 35px;
+    }
+
+    .blankBlack {
+        background-color: rgba(0, 0, 0, 0.599);
+        height: 90px;
+        width: 90px;
+        border-radius: 10%;
+    }
+
+    #safakhamsa {
+        background-color: aliceblue;
+        height: 90px;
+        width: 90px;
+        border-radius: 10%;
+
+    }
+
+    #natija {
+        background-color: rgb(97, 84, 235);
+        height: 90px;
+        width: 90px;
+        border-radius: 10%;
+
+    }
+</style>
+
+<body>
+    <div class="container">
+
+        <div class="header">
+
+            <div class="operation" style="font-size: 15px;" ></div>
+        
+            <input type="text" id="input">
+
+
+        </div>
+
+        <div class="buttons">
+            <div class="saf_one">
+                <button style="cursor: pointer;" type="button" class="fergha" id="safaloula"></button>
+                <button style="cursor: pointer;" type="button" class="fergha2" id="safaloula"></button>
+                <button onclick="reset()" style="cursor: pointer;" type="reset" class="fasakh" id="fasakh"><b>CE</b></button>
+                <button onclick="operators('/')" style="cursor: pointer;" type="button" class="operator" id="safaloula">/</button>
+            </div>
+            <div class="saf_two">
+                <button onclick="setNumber(7)" style="cursor: pointer;" type="button" class="felsa7" id="safatheniya">7</button>
+                <button onclick="setNumber(8)" style="cursor: pointer;" type="button" class="felsa8" id="safatheniya">8</button>
+                <button onclick="setNumber(9)" style="cursor: pointer;" type="button" class="felsa9" id="safatheniya">9</button>
+                <button onclick="operators('*')" style="cursor: pointer;" type="button" class="operator" id="safatheniya">*</button>
+
+            </div>
+            <div class="saf_three">
+                <button onclick="setNumber(4)" style="cursor: pointer;" type="button" class="felsa4" id="safatheltha">4</button>
+                <button onclick="setNumber(5)" style="cursor: pointer;" type="button" class="felsa5"
+                    id="safatheltha">5</button>
+                <button onclick="setNumber(6)" style="cursor: pointer;" type="button" class="felsa6" id="safatheltha">6</button>
+                <button onclick="operators('-')" style="cursor: pointer;" type="button" class="operator" id="safatheltha">-</button>
+
+            </div>
+            <div class="saf_four">
+                <button onclick="setNumber(1)" style="cursor: pointer;" type="button" class="felsa1" id="safarab3a">1</button>
+                <button onclick="setNumber(2)" style="cursor: pointer;" type="button" class="felsa2" id="safarab3a">2</button>
+                <button onclick="setNumber(3)" style="cursor: pointer;" type="button" class="felsa3" id="safarab3a">3</button>
+                <button onclick="operators('+')" style="cursor: pointer;" type="button" class="operator" id="safarab3a">+</button>
+
+            </div>
+            <div class="saf_five">
+                <button style="cursor: pointer;" type="button" class="blankBlack" id="safakhamsa1"></button>
+                <button onclick="setNumber(0)" style="cursor: pointer;" type="button" class="felsa0" id="safakhamsa">0</button>
+                <button onclick="addPoint()" style="cursor: pointer;" type="button" class="felsapoint" id="safakhamsa">.</button>
+                <button onclick="equal()" style="cursor: pointer;" type="button" class="operator" id="natija">=</button>
+            </div>
+            
+        </div>
+    </div>
+
+
+</body>
+<script language="javascript">
+    function setNumber(number) {
+        document.getElementById("input").value = document.getElementById("input").value === '0' ? '' : document.getElementById("input").value += number;
+    }
+    function addPoint()
+   {document.getElementById("input").value +=".";
+    } 
+    function reset()
+    {
+        document.getElementById("input").value="";
+    }
+   function operators(text)
+   {
+    document.getElementById("input").value+=text;
+   }
+   function equal()
+   {
+    
+    document.getElementById("input").value=eval(document.getElementById("input").value);
+   }
+
+
+</script>
+
+</html>
